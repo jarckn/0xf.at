@@ -179,7 +179,7 @@ class LevelView
 		{
 			$name = $data['name'];
 			if($_SESSION['solved'][$level])
-				$name = $html->span('<i class="fa fa-check"></i> '.$name,'green');
+				$name = $html->span('<i class="fa fa-smile-o"></i> '.$name,'green');
 			if($_SESSION['solvedtime'][$level])
 				$yavg = '<br/>'.$html->span('You: '.$al->time_duration($_SESSION['solvedtime'][$level]),'green');
 			else $yavg = '';

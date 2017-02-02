@@ -8,7 +8,7 @@ class Play extends Page
 {
     function setMenu()
     {
-        $this->menu_text = 'Play';
+        $this->menu_text = 'Start';
         $this->menu_image = 'fa fa-play-circle';
         $this->menu_priority = 2;
     }
@@ -17,7 +17,7 @@ class Play extends Page
     {
         $html = new HTML;
 
-        $o = '<h1 class="text-center">'.$html->buttonGoto('Start level 1','/play/1','','btn-lg').'</h1>';
+        $o = '<h1 class="text-center">'.$html->buttonGoto('Level 1 starten','/play/1','','btn-lg').'</h1>';
 
         $solved = $_SESSION['solved'];
 
@@ -27,7 +27,7 @@ class Play extends Page
             foreach($solved as $lid=>$level)
             {
                 if($lid<=1) continue;
-                $o.= '<h1 class="text-center">'.$html->buttonGoto('Start level '.($lid),'/play/'.$lid,'','btn-lg').'</h1>';
+                $o.= '<h1 class="text-center">'.$html->buttonGoto('Level '.($lid).' starten','/play/'.$lid,'','btn-lg').'</h1>';
             }
         }
 
@@ -37,7 +37,7 @@ class Play extends Page
         //var_dump($um->loadUser($_SESSION['user'],$_SESSION['uid'],false));
         
 
-        $this->set('title','Start 0xf');
+        $this->set('title','Start | 0xf.at von secion');
         //$this->set('header','Header');
         $this->set('content',$o);
         //$this->set('playing',true);
@@ -60,14 +60,14 @@ class Play extends Page
         else
             $diff = $_SESSION['solvedtime'][$level];
 
-        $nb = '<a href="/replay/'.$level.'">Replay this level</a>';
-        $o = $html->success('<h2>Level '.($level).' solved!</h2><h4>Took you '.$a->time_duration($diff).'</h4>').$nb.'<hr>';
+        $nb = '<a href="/replay/'.$level.'">Level wiederholen</a>';
+        $o = $html->success('<h2>Level '.($level).' erfolgreich!</h2><h4>Gebrauchte Zeit: '.$a->time_duration($diff).'</h4>').$nb.'<hr>';
         
 
 
         
         if($next)
-            $o.= $html->buttonGoto('Next level','/play/'.$next,'','btn-lg');
+            $o.= $html->buttonGoto('N&auml;chstes Level','/play/'.$next,'','btn-lg');
 
         $o.= $cm->getCommentForm($level);
         $o.= $cm->getCommentsFromLevel($level);
@@ -102,15 +102,15 @@ class Play extends Page
         $html = new HTML;
 
         if(!$_SESSION['levels']['hackit7'])
-            $o = '<h3>Too soon.. come back when you legally started level 7</h3>';
+            $o = '<h3>Zu fr&uuml;! Kommen Sie wieder, wenn Sie Level 7 bearbeiten!</h3>';
         else
         {
-            $o = '<h3>I don\'t know how you found it but you\'ve found it! The password for level 7 is:</h3><h4>'.$_SESSION['levels']['hackit7'].'</h4>';
-            $o.=$html->buttonGoto('Back to Level 7','/play/7');
+            $o = '<h3>Wir wissen nicht wie Sie dies gefunden haben, aber Sie haben \'s! Das Passwort f&uuml;r Level 7 lautet: </h3><h4>'.$_SESSION['levels']['hackit7'].'</h4>';
+            $o.=$html->buttonGoto('Zur&uuml;ck zu Level 7','/play/7');
         }
         
-        $this->set('title','0xf | Jerrys secret page');
-        $this->set('author','Christian Haschek');
+        $this->set('title','Gerrits geheime Seite | 0xf.at von secion');
+		$this->set('author','Christian Haschek');
         $this->set('content',$o);
         $this->set('playing',true);
     }
@@ -135,7 +135,7 @@ class Play extends Page
 
             $o = '<h1>Level '.$level.'</h1>'."\n";
             if($hackit->author)
-                $o.= 'by '.$hackit->author.'<br/><br/>';
+                $o.= 'erstellt von '.$hackit->author.'<br/><br/>';
             $val = $hackit->isSolved();
             switch(true)
             {
@@ -149,7 +149,7 @@ class Play extends Page
 
                 case $val === false:
                     if(($_REQUEST['pw']))
-                        $o.= $html->error('Wrong password');
+                        $o.= $html->error('Falsches Passwort');
                     $o.= $hackit->render();
                 break;
             }
@@ -162,7 +162,7 @@ class Play extends Page
         }
         
 
-        $this->set('title','0xf | Level '.($lid));
+        $this->set('title','0xf | Level '.($lid).', von secion');
         $this->set('author','Christian Haschek');
         $this->set('content',$o);
         $this->set('playing',true);

@@ -94,11 +94,17 @@ class LoginView
 		        </div>
 
 		        <div class="form-group">
+		        	<div class="col-lg-10">
+		        		<div class="g-recaptcha" data-sitekey="6Lf0XgMTAAAAADZiMxDHL3pA9Sxx8FO2PDL6i0n0"></div>
+		        	</div>
+		        </div>
+
+		        <div class="form-group">
 		            <div class="col-lg-10 col-lg-offset-2">
 		                <input type="submit" class="btn btn-primary" name="submit" value="Register" />
 		            </div>
 		        </div>
 		    </fieldset>
-		</form>');
+		</form>'."<script src='https://www.google.com/recaptcha/api.js'></script>");
 	}
 }

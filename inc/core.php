@@ -127,7 +127,7 @@ function getMenu()
                 $page->setMenu();
                 if(!$page->menu_text) continue;
                 if($page->menu_image)
-                    $arr[$class]['text'] = '<i class="'.$page->menu_image.' menu_icon_mdi"></i><br/>'.$page->menu_text;
+                    $arr[$class]['text'] = '<i class="'.$page->menu_image.' menu_icon_mdi"></i><br/><b class="menu_text">'.$page->menu_text.'</b>';
                 else
                     $arr[$class]['text'] = '<i class="menu_icon_mdi">'.$page->menu_text.'</i>';
                 $arr[$class]['priority'] = $page->menu_priority;

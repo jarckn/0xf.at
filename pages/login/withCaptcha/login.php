@@ -10,7 +10,7 @@ class Login extends Page
     {
         if($_SESSION['user'])
         {
-            $this->menu_text = 'Logout';
+            $this->menu_text = '<Logout';
             $this->menu_image = 'fa fa-sign-out';
         }
         else
@@ -76,12 +76,12 @@ class Login extends Page
             $basedir = ROOT.DS.'data'.DS.'users'.DS;
             $filename = $basedir.$nick.'.txt';
 
-            //$post = $a->post('https://www.google.com/recaptcha/api/siteverify',array('secret'=>'6Lf0XgMTAAAAADoLzkvjsIL2GnUufuQ5HXeLaxqN','response'=>$_POST['g-recaptcha-response'],'remoteip'=>$_SERVER['REMOTE_ADDR']));
-            //$pj = json_decode($post,true);
+            $post = $a->post('https://www.google.com/recaptcha/api/siteverify',array('secret'=>'6Lf0XgMTAAAAADoLzkvjsIL2GnUufuQ5HXeLaxqN','response'=>$_POST['g-recaptcha-response'],'remoteip'=>$_SERVER['REMOTE_ADDR']));
+            $pj = json_decode($post,true);
 
-            //if(!$pj['success'])
-                //$o = $html->error("Captcha failed");
-            if(file_exists($filename))
+            if(!$pj['success'])
+                $o = $html->error("Captcha failed");
+            else if(file_exists($filename))
                 $o = $html->error('This nick is already taken!');
             else if(!$nick || $nick != strtolower(trim($_POST['nick'])))
                 $o = $html->error('Enter a valid nick (only alpha-numberic values)');

@@ -21,9 +21,9 @@ class Hackit1 implements Hackit
 
 	public function render()
 	{
-		return '            <div>Easy beginnings</div>
-            <input id="pw" type="password" />
-            <br/><input type="button" value="OK" onClick="checkPW()"/>
+		return '<div>Easy beginnings</div>
+			<input id="pw" type="password" />
+			<br/><input type="button" value="OK" onClick="checkPW()"/>
             <script type="text/javascript">
                 function checkPW()
                 {

@@ -1078,7 +1078,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #E4E9E2;
 }
 input,
 button,
@@ -3858,6 +3858,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  background-color: #F29400;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .nav > li {
   position: relative;
@@ -3871,7 +3874,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eee;
+  background-color: #2E79B3;
 }
 .nav > li.disabled > a {
   color: #777;
@@ -4379,7 +4382,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: #F29400;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {

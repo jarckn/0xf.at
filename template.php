@@ -19,10 +19,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free hackits, no registration needed, no ads">
-    <meta name="author" content="<?php echo $author; ?>">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="author" content="secion GmbH">
+    <link rel="shortcut icon" href="https://www.secion.de/files/secion/_icons/favicon.ico">
     <title><?php echo $title ?></title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/prism.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css" rel="stylesheet">
@@ -30,16 +30,16 @@
     <script src="/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <!-- Open Graph data -->
-    <meta property="og:title" content="0xf.at - Hackits for everyone" />
+    <meta property="og:title" content="secion's 0xf.at - Hackits" />
     <meta property="og:image" content="http://www.0xf.at/css/imgs/logo_bg.jpg" />
-    <meta property="og:description" content="Hackits for everyone, no registration needed, no ads, free for all" /> 
+    <meta property="og:description" content="Hackits for everyone by secion, no registration needed, no ads" /> 
   </head>
 
   <body>
     <?php if($playing==false) { ?>
     <div class="container">
       <div class="navbar">
-          <ul class="nav nav-justified" id="myNav">
+          <ul class="nav" id="myNav">
             <?php echo $menu; ?>
           </ul>
       </div>
@@ -75,7 +75,7 @@
 
       <div style="padding-top:50px;" class="container text-center">
         <footer>
-          <?php echo $footer?$footer:'<p>&copy; '.date("Y").' by<br/><a href="https://www.haschek.solutions"><img width="300" class="text-center" style="margin: 0 auto;" src="https://www.pictshare.net/1cd0faf462.png"></a></p>';?>
+          <?php echo $footer?$footer:'<p>&copy; '.date("Y").' by <a href="https://www.secion.de">secion GmbH</a></br>Forked from <a href="https://github.com/HaschekSolutions/0xf.at">0xf.at</a></p>';?>
         </footer>
       </div>
     </div>
@@ -86,7 +86,6 @@
     <script src="/js/scripts.js"></script>
     <script src="/js/prism.js"></script>
     
-    <a href="https://github.com/HaschekSolutions/0xf.at"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
     <?php 
       if(file_exists(ROOT.DS.'tracker.html'))
         include(ROOT.DS.'tracker.html');

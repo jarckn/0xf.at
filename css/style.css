@@ -9,6 +9,12 @@ body {
 	height:1px;
 }
 
+.menu_text
+{
+	color: #fff;
+	font-size: 100% !important;
+}
+
 .progress-bar
 {
 	/* CSS3 Progress Bar Transitions */
@@ -22,6 +28,7 @@ body {
 .menu_item > a > center >  i
 {
     font-size:30pt;
+	color: #fff;
 }
 
 .width60s {

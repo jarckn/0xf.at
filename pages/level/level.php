@@ -8,7 +8,7 @@ class Level extends Page
 {
     function setMenu()
     {
-        $this->menu_text = 'Levels';
+        $this->menu_text = 'Level';
         $this->menu_image = 'fa fa-list';
         $this->menu_priority = 3;
     }
@@ -23,8 +23,7 @@ class Level extends Page
         $o.= $lv->renderClockReport();
 
 
-        $this->set('title','Welcome to 0xf.at - The best hackits site since isatcis.com (not affiliated)');
-        //$this->set('header','0xf.at hackits');
+        $this->set('title','Level | 0xf.at von secion');
         $this->set('content',$o);
     }
     
